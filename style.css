@@ -1,0 +1,53 @@
+ body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+            <body>
+
+    <h1>迷因帝國 🎉</h1>
+    <p id="text">點擊按鈕看看會發生什麼</p>
+
+    <button onclick="changeText()">點我</button>
+
+    <script>
+        const memes = [
+            "你在滑手機，但手機也在滑你 🤯",
+            "我沒有偷懶，我在節能模式 😎",
+            "今天不努力，明天繼續努力 💀",
+            "這不是BUG，是特色 ✨",
+            "再睡5分鐘 = 30分鐘 😴",
+            "我本來想認真，但迷因太香 😂"
+
+        ];
+
+        function changeText() {
+            const randomIndex = Math.floor(Math.random() * memes.length);
+            document.getElementById("text").innerText = memes[randomIndex];
+        }
+    </script>
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+

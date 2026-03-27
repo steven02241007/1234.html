@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Nakoo</title>
+   
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>迷因帝國 🎉</title>
+    <style>
+
+
+        body {
+            font-family: "Arial", sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            text-align: center;
+            padding: 80px;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 48px;
+        }
+
+        p {
+            font-size: 24px;
+            margin: 30px 0;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #ff4757;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #e84118;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+    <title>迷因帝國 🎉</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        img {
+            width: 300px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        p {
+            font-size: 22px;
+            margin: 20px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            background-color: #ff4757;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e84118;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>迷因帝國 🎉</h1>
+
+    <img id="memeImage" src="meme1.jpg" alt="迷因圖片">
+
+    <p id="text">點擊按鈕看看會發生什麼 😂</p>
+
+    <button onclick="changeMeme()">換一個迷因</button>
+
+    <script>
+        const memes = [
+            {
+                text: "你看看，到處都是迷因 🤯",
+                img: "meme1.jpg"
+            },
+            {
+                text: "帥到連自己都懷疑 😎",
+                img: "meme2.jpg"
+            }
+        ];
+
+        function changeMeme() {
+            const random = Math.floor(Math.random() * memes.length);
+            document.getElementById("text").innerText = memes[random].text;
+            document.getElementById("memeImage").src = memes[random].img;
+        }
+    </script>
+    </style>
+</body>
+</html>
+<audio autoplay loop><source src="bakamitai.mp3" type="audio/mpeg"></audio>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+</body> {
+  margin: 0;
+  overflow: hidden;
+  background: black;
+  color: #0f0;
+  font-family: "Comic Sans MS", cursive;
+}
+
+/* 呼吸背景 */
+@keyframes breathe {
+  0% { background-color: #000; }
+  50% { background-color: #020202; }
+  100% { background-color: #000; }
+}
+body {
+  animation: breathe 5s infinite;
+}
+
+/* 隨機語錄框 */
+#quote {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 20px;
+}
+
+/* 哲學按鈕 */
+#philosophy {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  background: lime;
+  color: black;
+  cursor: pointer;
+  border: none;
+}
+
+/* 逃跑 emoji */
+.emoji {
+  position: absolute;
+  font-size: 24px;
+  pointer-events: none;
+  transition: transform 0.5s linear;
+}
+
+/* 精神錯亂效果 */
+.glitch {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: red;
+  opacity: 0;
+}
+</head>
+
+<body>
+
+<div id="quote">點擊任何地方</div>
+<button id="philosophy">哲學按鈕</button>
+<div id="glitch" class="glitch">你不該看到這個</div>
+
+<script>
+
+// 隨機荒謬語錄
+const quotes = [
+  "香蕉其實在監視你",
+  "你點擊了，但點擊也點擊了你",
+  "這句話沒有結尾因為",
+  "我不是AI，我是你滑鼠的靈魂",
+  "CSS正在評判你的人生",
+  "如果你關掉我，我會變得更強",
+  "網頁其實是活的，只是你不信"
+];
+
+// 點擊生成語錄
+document.body.onclick = () => {
+  const q = quotes[Math.floor(Math.random() * quotes.length)];
+  document.getElementById("quote").innerText = q;
+};
+
+// 滑鼠留下 emoji（會亂跑）
+document.addEventListener("mousemove", (e) => {
+  const emoji = document.createElement("div");
+  emoji.className = "emoji";
+  emoji.innerText = ["👁️","🧠","🍌","🌀","🐸"][Math.floor(Math.random()*5)];
+  emoji.style.left = e.pageX + "px";
+  emoji.style.top = e.pageY + "px";
+  document.body.appendChild(emoji);
+
+  setTimeout(() => {
+    emoji.style.transform = `translate(${Math.random()*200-100}px, ${Math.random()*200-100}px)`;
+  }, 50);
+
+  setTimeout(() => {
+    emoji.remove();
+  }, 1000);
+});
+
+// 哲學按鈕（完全亂講）
+document.getElementById("philosophy").onclick = () => {
+  alert("當你按下這個按鈕時，按鈕也按下了你。\n\n請思考：div 是否有靈魂？");
+};
+
+// 隨機精神錯亂
+setInterval(() => {
+  if (Math.random() < 0.2) {
+    const g = document.getElementById("glitch");
+    g.style.opacity = 1;
+    g.innerText = Math.random().toString(36).substring(2);
+    
+    setTimeout(() => {
+      g.style.opacity = 0;
+    }, 200);
+  }
+}, 1000);
+
+</script>
+
+</body>
+</html>
