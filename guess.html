@@ -1,0 +1,58 @@
+<div>
+    <h1>猜數字遊戲</h1>
+    <label for="guessField">猜一個數字 (1 到 100):</label>
+    <input type="number" class="guessField" id="guessField" min="1" max="100">
+    <button class="guessSubmit">提交</button>
+    <div class="result"></div>
+    <div class="count"></div>
+  </div>
+<script>
+(function(){
+    const secret = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+
+    const guessField = document.getElementById('guessField');
+    const submitBtn = document.querySelector('.guessSubmit');
+    const resultEl = document.querySelector('.result');
+    const countEl = document.querySelector('.count');
+
+    submitBtn.addEventListener('click', checkGuess);
+    guessField.addEventListener('keydown', (e) => { if (e.key === 'Enter') checkGuess(); });
+
+    function checkGuess() {
+        const guess = Number(guessField.value);
+        attempts++;
+        countEl.textContent = '猜測次數: ' + attempts;
+
+        if (!Number.isInteger(guess) || guess < 1 || guess > 100) {
+            resultEl.textContent = '請輸入 1 到 100 的整數。';
+            resultEl.style.color = 'orange';
+            return;
+        }
+
+        if (guess === secret) {
+            resultEl.textContent = '恭喜！答對了，數字是 ' + secret + '。';
+            resultEl.style.color = 'green';
+            endGame();
+        } else if (guess < secret) {
+            resultEl.textContent = '太小了！';
+            resultEl.style.color = 'red';
+        } else {
+            resultEl.textContent = '太大了！';
+            resultEl.style.color = 'red';
+        }
+
+        guessField.value = '';
+        guessField.focus();
+    }
+
+    function endGame() {
+        guessField.disabled = true;
+        submitBtn.disabled = true;
+        const reset = document.createElement('button');
+        reset.textContent = '重新開始';
+        reset.addEventListener('click', () => location.reload());
+        document.body.appendChild(reset);
+    }
+})();
+</script>
